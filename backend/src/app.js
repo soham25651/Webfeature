@@ -17,11 +17,8 @@ app.use(cors({
   origin: true, // or 3000 if using CRA
   credentials: true
 }));
- app.use("/api/v2/users" , userRoutes);
-app.use(express.static(path.join(__dirname, "../../frontend/vite-project/dist")));
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, "../../frontend/vite-project/dist/index.html"));
-});
+  app.use("/api/v2/users" , userRoutes);
+
 
 
 const connecting =  async()=>{
