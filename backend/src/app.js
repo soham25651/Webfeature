@@ -77,10 +77,9 @@ app.use(express.static(distPath));
 
 
 // Express 5 requires RegExp instead of "*"
-app.get(/.*/, (req, res) => {
+app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(distPath, "index.html"));
 });
-
 // ------------------ MongoDB ------------------
 const connecting = async () => {
   try {
