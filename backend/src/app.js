@@ -74,9 +74,7 @@ app.use("/api/v2/users", userRoutes);
 
 // Serve static assets
 app.use(express.static(distPath));
-app.get("/favicon.ico", (req, res) => {
-  res.sendFile(path.join(distPath, "favicon.ico"));
-});
+
 
 // Express 5 requires RegExp instead of "*"
 app.get(/.*/, (req, res) => {
