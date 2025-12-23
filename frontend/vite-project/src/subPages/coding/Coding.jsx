@@ -190,22 +190,22 @@ const handleSubTopicClick = (sub) => {
   setCurrChap(sub);
 
   // 1) Read auth data from localStorage
-  const auth = JSON.parse(localStorage.getItem("authData"));
+  //const auth = JSON.parse(localStorage.getItem("authData"));
 
   // IF no auth → send to login
-  if (!auth || !auth.token || !auth.accessExpiry) {
-    return navigate("/login");
-  }
+  // if (!auth || !auth.token || !auth.accessExpiry) {
+  //   return navigate("/login");
+  // }
 
   // 2) Check access expiry (7 days rule)
-  const now = new Date();
-  const expiry = new Date(auth.accessExpiry);
+  // const now = new Date();
+  // const expiry = new Date(auth.accessExpiry);
 
-  // If expired → go to login
-  if (now > expiry) {
-    localStorage.removeItem("authData");
-    return navigate("/login");
-  }
+  // // If expired → go to login
+  // if (now > expiry) {
+  //   localStorage.removeItem("authData");
+  //   return navigate("/login");
+  // }
 
   // 3) User is authenticated & inside 7 days → store page data
   const toSave = {
